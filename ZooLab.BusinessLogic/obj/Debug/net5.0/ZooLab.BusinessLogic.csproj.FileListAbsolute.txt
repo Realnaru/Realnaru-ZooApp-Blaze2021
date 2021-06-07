@@ -10,3 +10,10 @@ D:\projects\ZooApp-blaze2021\ZooLab\ZooLab.BusinessLogic\obj\Debug\net5.0\ZooLab
 D:\projects\ZooApp-blaze2021\ZooLab\ZooLab.BusinessLogic\obj\Debug\net5.0\ref\ZooLab.BusinessLogic.dll
 D:\projects\ZooApp-blaze2021\ZooLab\ZooLab.BusinessLogic\obj\Debug\net5.0\ZooLab.BusinessLogic.pdb
 D:\projects\ZooApp-blaze2021\ZooLab\ZooLab.BusinessLogic\obj\Debug\net5.0\ZooLab.BusinessLogic.csproj.AssemblyReference.cache
+D:\projects\ZooApp-blaze2021\ZooLab\ZooLab.BusinessLogic\bin\Debug\net5.0\ZooLab.deps.json
+D:\projects\ZooApp-blaze2021\ZooLab\ZooLab.BusinessLogic\bin\Debug\net5.0\ZooLab.runtimeconfig.json
+D:\projects\ZooApp-blaze2021\ZooLab\ZooLab.BusinessLogic\bin\Debug\net5.0\ZooLab.runtimeconfig.dev.json
+D:\projects\ZooApp-blaze2021\ZooLab\ZooLab.BusinessLogic\bin\Debug\net5.0\ZooLab.exe
+D:\projects\ZooApp-blaze2021\ZooLab\ZooLab.BusinessLogic\bin\Debug\net5.0\ZooLab.dll
+D:\projects\ZooApp-blaze2021\ZooLab\ZooLab.BusinessLogic\bin\Debug\net5.0\ZooLab.pdb
+D:\projects\ZooApp-blaze2021\ZooLab\ZooLab.BusinessLogic\obj\Debug\net5.0\ZooLab.BusinessLogic.csproj.CopyComplete

@@ -62,6 +62,7 @@ namespace ZooLab.Tests
             Assert.Equal(5000, enclosureArea);
         }
 
+        /*
         [Fact]
         public void ShoulBeAbleToFindAvailableEnclosure()
         {
@@ -69,7 +70,23 @@ namespace ZooLab.Tests
             Lion lion = new Lion();
             zoo.AddEnclosure("Lions Enclosure", 5000);
             zoo.AddEnclosure("elepants Enclosure", 15000);
-            
+            zoo.Enclosures[0].AddAnimals(new Lion());
+            zoo.Enclosures[1].AddAnimals(new Elephant());
+            Enclosure foundEnclosure = zoo.FindAvailableEnclosureFor(lion);
+            Enclosure availableEnclosure = zoo.Enclosures[0];
+            Assert.Equal(availableEnclosure, foundEnclosure);
         }
+
+        [Fact]
+        public void ShouldThrowExeptionIfEnclosureNotFound()
+        {
+            Zoo zoo = new();
+            Lion lion = new();
+            
+            Assert.Throws<NoAvailableEnclosureException>( () => {
+                Enclosure foundEnclosure = zoo.FindAvailableEnclosureFor(lion);
+            });
+        }
+        */
     }
 }

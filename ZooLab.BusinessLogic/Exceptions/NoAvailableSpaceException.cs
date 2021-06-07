@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ZooLab.Tests
+namespace ZooLab.BusinessLogic
 {
-    class FoodTests
+    class NoAvailableSpaceException : Exception
     {
     }
 }

@@ -23,9 +23,28 @@ namespace ZooLab.BusinessLogic
         public Zoo ParentZoo { get; private set; }
         public int SquareFeet { get; private set; }
 
+        /*
         public void AddAnimals (Animal animal)
         {
-            Animals.Add(animal);
+            if (SquareFeet >= animal.RequiredSpaceSqFeet)
+            {
+                foreach (var creature in Animals)
+                {
+                    if (animal.IsFriendlyWith(creature))
+                    {
+                        Animals.Add(animal);
+                        SquareFeet -= animal.RequiredSpaceSqFeet;
+                    } else
+                    {
+                        throw new NotFriendlyAnimalException();
+                    }
+                }
+
+            } else
+            {
+                throw new NoAvailableSpaceException();
+            }
         }
+        */
     }
 }

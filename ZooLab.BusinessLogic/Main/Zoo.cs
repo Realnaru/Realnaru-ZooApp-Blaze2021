@@ -24,5 +24,11 @@ namespace ZooLab.BusinessLogic
             Enclosure enclosure = new Enclosure(name, area);
             Enclosures.Add(enclosure);
         }
+
+        public Enclosure FindAvailableEnclosureFor(Animal animal)
+        {
+            return new Enclosure();
+        }
+            
     }
 }

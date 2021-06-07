@@ -31,7 +31,7 @@ namespace ZooLab.Tests
         public void ShoulBeAbleToGetAndSetZookeeper()
         {
             FeedTime feedTime = new();
-            ZooKeeper zooKeeper = new();
+            ZooKeeper zooKeeper = new("First Name", "Last Name");
             feedTime.FedByZookeeper = zooKeeper;
             ZooKeeper zookeeperThatFedAnimal = feedTime.FedByZookeeper;
             Assert.Equal(zooKeeper, zookeeperThatFedAnimal);

@@ -9,7 +9,7 @@ namespace ZooLab.BusinessLogic
     public abstract class Animal
     {
         public abstract int RequiredSpaceSqFeet { get; }
-        public abstract string [] FavoriteFood { get; }
+        public abstract string[] FavoriteFood { get; }
 
         public List<FeedTime> FeedTimes { get; set; }
 
@@ -32,7 +32,7 @@ namespace ZooLab.BusinessLogic
         {
             foreach (var anyFood in FavoriteFood)
             {
-                if (food.GetType().ToString().Contains(anyFood))
+                if (food.GetType().Name == anyFood)
                 {
                     IsHungry = false;
                 }

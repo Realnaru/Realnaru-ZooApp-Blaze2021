@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace ZooLab.BusinessLogic
 {
-    public interface IEmployee
+    class NoNeededExpirienceException : Exception 
     {
-        public string FirstName { get; }
-        public string LastName { get; }
     }
 }

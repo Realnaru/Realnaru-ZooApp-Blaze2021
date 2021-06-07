@@ -21,7 +21,6 @@ namespace ZooLab.Tests
         public void ShoulBeAbleToCreateEnclosureWithNameAndArea()
         {
             Enclosure enclosure = new Enclosure("anyName", 5);
-
         }
 
         [Fact]
@@ -29,8 +28,6 @@ namespace ZooLab.Tests
         {
             Enclosure enclosure = new Enclosure();
             string anyName = enclosure.Name;
-
-
         }
 
         [Fact]
@@ -38,7 +35,6 @@ namespace ZooLab.Tests
         {
             Enclosure enclosure = new Enclosure();
             List<Animal> animals = enclosure.Animals; 
-
         }
 
         [Fact]
@@ -46,7 +42,6 @@ namespace ZooLab.Tests
         {
             Enclosure enclosure = new Enclosure();
             Zoo anyZoo = enclosure.ParentZoo;
-
         }
 
         [Fact]
@@ -54,13 +49,13 @@ namespace ZooLab.Tests
         {
             Enclosure enclosure = new Enclosure();
             int anyArea = enclosure.SquareFeet;
-
         }
 
+        /*
         [Fact]
-        public void ShoulBeAbleToAddAnimals()
+        public void ShoulBeAbleToAddFriendlyAnimals()
         {
-            Enclosure enclosure = new Enclosure();
+            Enclosure enclosure = new Enclosure("Huge Enclosure", 100000000);
             Animal firstBird = new Parrot();
             Animal secondBird = new Penguin();
             Animal firstMammal = new Bison();
@@ -80,5 +75,6 @@ namespace ZooLab.Tests
             
        
         }
+        */
     }
 }

@@ -1095,6 +1095,9 @@
         }
       },
       "ZooLab.BusinessLogic/1.0.0": {
+        "dependencies": {
+          "ZooLab": "1.0.0"
+        },
         "runtime": {
           "ZooLab.BusinessLogic.dll": {}
         }
