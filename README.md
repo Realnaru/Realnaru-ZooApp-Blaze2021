@@ -1,0 +1,1 @@
+[![codecov](https://codecov.io/gh/Realnaru/ZooLab-Blaze2021/branch/master/graph/badge.svg?token=0G5TFHA9BI)](https://codecov.io/gh/Realnaru/ZooLab-Blaze2021)
