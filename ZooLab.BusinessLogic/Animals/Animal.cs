@@ -15,6 +15,8 @@ namespace ZooLab.BusinessLogic
 
         public List<int> FeedSchedule { get; private set; }
 
+        public string NeededMedicine { get; } = new string[3] {"Antibiotic", "AntiDepression", "AntiInflammatory"}[new Random().Next(0, 3)];  
+
         public bool IsSick { get; set; } = (new Random().Next(0, 10) > 5) ? true : false;
 
         public bool IsHungry { get; set; } = (new Random().Next(0, 10) > 5) ? true : false;
@@ -40,6 +42,10 @@ namespace ZooLab.BusinessLogic
         }
         public void Heal (Medicine medicine)
         {
+            if (medicine.GetType().Name == NeededMedicine)
+            {
+                IsSick = false;
+            }
 
         }
         

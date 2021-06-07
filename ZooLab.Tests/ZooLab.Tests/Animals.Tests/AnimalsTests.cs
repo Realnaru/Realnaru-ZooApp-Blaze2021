@@ -47,6 +47,14 @@ namespace ZooLab.Tests
         }
 
         [Fact]
+        public void ShouldBeAbleToGetNeededMedicineToBeHealed()
+        {
+            Animal lion = new Lion();
+            string neededMedicine = lion.NeededMedicine;
+            Assert.Equal(neededMedicine, lion.NeededMedicine);
+        }
+
+        [Fact]
         public void ShouldBeAbleToSetAndGetFeedTimes()
         {
             Animal lion = new Lion();

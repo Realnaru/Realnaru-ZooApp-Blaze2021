@@ -30,6 +30,14 @@ namespace ZooLab.Tests
         }
 
         [Fact]
+        public void ShouldBeAbleToGetAndSetAvailableMedicine()
+        {
+            Veterinarian veterinarian = new("First Name", "Last Name");
+            List < Medicine > availableMedicine = veterinarian.AvailableMedicine;
+            Assert.Equal(availableMedicine, veterinarian.AvailableMedicine);
+        }
+
+        [Fact]
         public void ShouldBeAbleToHaveAnimalExpirience()
         {
             Veterinarian veterinarian = new("First Name", "Last Name");
@@ -63,6 +71,9 @@ namespace ZooLab.Tests
         public void ShouldBeAbleToHealSickAnimalIfHasExpirienceWith()
         {
             Veterinarian veterinarian = new Veterinarian("First Name", "Last Name");
+            veterinarian.AvailableMedicine.Add(new Antibiotic());
+            veterinarian.AvailableMedicine.Add(new AntiDepression());
+            veterinarian.AvailableMedicine.Add(new AntiInflammatory());
             Animal bison = new Bison();
             bison.IsSick = true;
             veterinarian.AddAnimalExperience(bison);
@@ -82,6 +93,19 @@ namespace ZooLab.Tests
             Assert.False(canVeterinarianHealBison);
             Assert.True(lion.IsSick);
         }
+
+        [Fact]
+        public void ShouldNotHealAnimalWithoutNeededMedicine()
+        {
+            Veterinarian veterinarian = new Veterinarian("First Name", "Last Name");
+            Animal lion = new Lion();
+            lion.IsSick = true;
+            veterinarian.AddAnimalExperience(new Lion());
+            bool canVeterinarianHealBison = veterinarian.HealAnimal(lion);
+            Assert.False(canVeterinarianHealBison);
+            Assert.True(lion.IsSick);
+        }
+
 
         [Fact]
         public void ShouldNotHealHealthyAnimal()

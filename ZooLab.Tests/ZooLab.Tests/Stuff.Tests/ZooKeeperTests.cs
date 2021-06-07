@@ -96,6 +96,20 @@ namespace ZooLab.Tests
         }
 
         [Fact]
+        public void ShouldNotBeAbleToFeedSickAnimalIfHasNoFavoriteFood()
+        {
+            ZooKeeper zooKeeper = new("First Name", "Last Name");
+            zooKeeper.AvailableFood.Add(new Vegetable());
+            Animal lion = new Lion();
+            lion.IsSick = true;
+            zooKeeper.AddAnimalExperience(new Lion());
+            bool canZooKeeperFeedLion = zooKeeper.FeedAnimal(lion);
+            Assert.True(lion.IsSick);
+            Assert.False(canZooKeeperFeedLion);
+            
+        }
+
+        [Fact]
         public void ShouldNotHealHealthyAnimal()
         {
             ZooKeeper zooKeeper = new ("First Name", "Last Name");

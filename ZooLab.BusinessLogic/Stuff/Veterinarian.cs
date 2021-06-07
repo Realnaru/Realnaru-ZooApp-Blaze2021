@@ -17,6 +17,8 @@ namespace ZooLab.BusinessLogic
         public string FirstName { get; private set; }
         public string LastName { get; private set; }
 
+        public List<Medicine> AvailableMedicine { get; set; } = new List<Medicine>();
+
         public List<string> AnimalExperience { get; } = new List<string>();
 
         public void AddAnimalExperience(Animal animal)
@@ -42,8 +44,14 @@ namespace ZooLab.BusinessLogic
         {
             if (HasAnimalExperience(animal) && animal.IsSick)
             {
-                animal.IsSick = false;
-                return true;
+                foreach (var medicine in AvailableMedicine)
+                {
+                    if (medicine.GetType().Name == animal.NeededMedicine)
+                    {
+                        animal.Heal(medicine);
+                        return true;
+                    }
+                }
             }
             return false;
         }

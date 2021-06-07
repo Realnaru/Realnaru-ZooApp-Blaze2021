@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ZooLab.BusinessLogic
 {
-    class NotFriendlyAnimalException : Exception
+    public class NotFriendlyAnimalException : Exception
     {
     }
 }

@@ -11,70 +11,86 @@ namespace ZooLab.Tests
     public class EnclosureTests
     {
         [Fact]
-        public void ShoulBeAbleToCreateEnclosure()
+        public void ShouldBeAbleToCreateEnclosure()
         {
             Enclosure enclosure = new Enclosure();
 
         }
 
         [Fact]
-        public void ShoulBeAbleToCreateEnclosureWithNameAndArea()
+        public void ShouldBeAbleToCreateEnclosureWithNameAndArea()
         {
             Enclosure enclosure = new Enclosure("anyName", 5);
         }
 
         [Fact]
-        public void ShoulBeAbleToGetName()
+        public void ShouldBeAbleToGetName()
         {
             Enclosure enclosure = new Enclosure();
             string anyName = enclosure.Name;
         }
 
         [Fact]
-        public void ShoulBeAbleToGetAnimals()
+        public void ShouldBeAbleToGetAnimals()
         {
             Enclosure enclosure = new Enclosure();
             List<Animal> animals = enclosure.Animals; 
         }
 
         [Fact]
-        public void ShoulBeAbleToGetParentZoo()
+        public void ShouldBeAbleToGetParentZoo()
         {
             Enclosure enclosure = new Enclosure();
             Zoo anyZoo = enclosure.ParentZoo;
         }
 
         [Fact]
-        public void ShoulBeAbleToGetSquareFeet()
+        public void ShouldBeAbleToGetSquareFeet()
         {
             Enclosure enclosure = new Enclosure();
             int anyArea = enclosure.SquareFeet;
         }
 
-        /*
         [Fact]
-        public void ShoulBeAbleToAddFriendlyAnimals()
+        public void ShouldBeAbleToAddAnimalsIfThereIsSpaceAndNoUnfriendlyAnimals()
         {
-            Enclosure enclosure = new Enclosure("Huge Enclosure", 100000000);
-            Animal firstBird = new Parrot();
-            Animal secondBird = new Penguin();
-            Animal firstMammal = new Bison();
-            Animal secondMammal = new Elephant();
-            Animal thirdMammal = new Lion();
-            Animal firstReptile = new Snake();
-            Animal secondReptile = new Turtle();
-
-            List<Animal> animals = new List<Animal>() { firstBird, secondBird, firstMammal, secondMammal, thirdMammal, firstReptile, secondReptile };
-            foreach (var animal in animals)
-            {
-                enclosure.AddAnimals(animal);
-            }
-
-            List<Animal> receivedAnimals = enclosure.Animals;
-            Assert.Equal(animals, receivedAnimals); 
-            
-       
+            Enclosure enclosure = new("huge enclosure", 100000);
+            Elephant elephant = new Elephant();
+            enclosure.AddAnimals(elephant);
+            Assert.Equal(elephant, enclosure.Animals[0]);
         }
-        */
+
+        [Fact]
+        public void ShouldBeNotAbleToAddAnimalsIfThereIsNoSpace()
+        {
+            Enclosure enclosure = new("tiny enclosure", 5);
+            Elephant elephant = new Elephant();
+            Assert.Throws<NoAvailableSpaceException>(() => enclosure.AddAnimals(elephant));
+        }
+
+        [Fact]
+        public void ShouldBeNotAbleToAddAnimalsIfThereIsUnfriendlyAnimal()
+        {
+            Enclosure enclosure = new("huge enclosure", 10000);
+            enclosure.AddAnimals(new Lion());
+            Elephant elephant = new Elephant();
+            Assert.Throws<NotFriendlyAnimalException>(() => enclosure.AddAnimals(elephant));
+        }
+
+        [Fact]
+        public void ShouldBeAbleToDecideIsEnclosureSafeForAnimal()
+        {
+            Enclosure firstEnclosure = new("huge enclosure", 10000);
+            firstEnclosure.AddAnimals(new Lion());
+            bool isFriendlyToBison = firstEnclosure.IsFriendlyTo(new Bison());
+            Assert.False(isFriendlyToBison);
+
+            Enclosure secondEnclosure = new("big enclosure", 9000);
+            secondEnclosure.AddAnimals(new Bison());
+            bool isFriendlyToAnotherBison = secondEnclosure.IsFriendlyTo(new Bison());
+            Assert.True(isFriendlyToAnotherBison);
+
+        }
+
     }
 }

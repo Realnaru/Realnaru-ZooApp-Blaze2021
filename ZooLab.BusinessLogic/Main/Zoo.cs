@@ -25,9 +25,17 @@ namespace ZooLab.BusinessLogic
             Enclosures.Add(enclosure);
         }
 
-        public Enclosure FindAvailableEnclosureFor(Animal animal)
+        public Enclosure FindAvailableEnclosure(Animal animal)
         {
-            return new Enclosure();
+            foreach (var enclosure in Enclosures)
+            {
+                if (enclosure.SquareFeet >= animal.RequiredSpaceSqFeet && 
+                    enclosure.IsFriendlyTo(animal))
+                {
+                    return enclosure;
+                }
+            }
+            throw new NoAvailableEnclosureException();
         }
             
     }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ZooLab.BusinessLogic
 {
-    class NoNeededExpirienceException : Exception 
+    public class NoNeededExpirienceException : Exception 
     {
     }
 }
