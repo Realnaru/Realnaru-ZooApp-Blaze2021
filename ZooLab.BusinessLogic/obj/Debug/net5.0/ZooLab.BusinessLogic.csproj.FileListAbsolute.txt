@@ -1,0 +1,12 @@
+D:\projects\ZooApp-blaze2021\ZooLab\ZooLab.BusinessLogic\bin\Debug\net5.0\ZooLab.BusinessLogic.deps.json
+D:\projects\ZooApp-blaze2021\ZooLab\ZooLab.BusinessLogic\bin\Debug\net5.0\ZooLab.BusinessLogic.dll
+D:\projects\ZooApp-blaze2021\ZooLab\ZooLab.BusinessLogic\bin\Debug\net5.0\ref\ZooLab.BusinessLogic.dll
+D:\projects\ZooApp-blaze2021\ZooLab\ZooLab.BusinessLogic\bin\Debug\net5.0\ZooLab.BusinessLogic.pdb
+D:\projects\ZooApp-blaze2021\ZooLab\ZooLab.BusinessLogic\obj\Debug\net5.0\ZooLab.BusinessLogic.GeneratedMSBuildEditorConfig.editorconfig
+D:\projects\ZooApp-blaze2021\ZooLab\ZooLab.BusinessLogic\obj\Debug\net5.0\ZooLab.BusinessLogic.AssemblyInfoInputs.cache
+D:\projects\ZooApp-blaze2021\ZooLab\ZooLab.BusinessLogic\obj\Debug\net5.0\ZooLab.BusinessLogic.AssemblyInfo.cs
+D:\projects\ZooApp-blaze2021\ZooLab\ZooLab.BusinessLogic\obj\Debug\net5.0\ZooLab.BusinessLogic.csproj.CoreCompileInputs.cache
+D:\projects\ZooApp-blaze2021\ZooLab\ZooLab.BusinessLogic\obj\Debug\net5.0\ZooLab.BusinessLogic.dll
+D:\projects\ZooApp-blaze2021\ZooLab\ZooLab.BusinessLogic\obj\Debug\net5.0\ref\ZooLab.BusinessLogic.dll
+D:\projects\ZooApp-blaze2021\ZooLab\ZooLab.BusinessLogic\obj\Debug\net5.0\ZooLab.BusinessLogic.pdb
+D:\projects\ZooApp-blaze2021\ZooLab\ZooLab.BusinessLogic\obj\Debug\net5.0\ZooLab.BusinessLogic.csproj.AssemblyReference.cache

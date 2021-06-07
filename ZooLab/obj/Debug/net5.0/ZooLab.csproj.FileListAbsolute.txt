@@ -1,0 +1,16 @@
+D:\projects\ZooApp-blaze2021\ZooLab\ZooLab\bin\Debug\net5.0\ZooLab.exe
+D:\projects\ZooApp-blaze2021\ZooLab\ZooLab\bin\Debug\net5.0\ZooLab.deps.json
+D:\projects\ZooApp-blaze2021\ZooLab\ZooLab\bin\Debug\net5.0\ZooLab.runtimeconfig.json
+D:\projects\ZooApp-blaze2021\ZooLab\ZooLab\bin\Debug\net5.0\ZooLab.runtimeconfig.dev.json
+D:\projects\ZooApp-blaze2021\ZooLab\ZooLab\bin\Debug\net5.0\ZooLab.dll
+D:\projects\ZooApp-blaze2021\ZooLab\ZooLab\bin\Debug\net5.0\ref\ZooLab.dll
+D:\projects\ZooApp-blaze2021\ZooLab\ZooLab\bin\Debug\net5.0\ZooLab.pdb
+D:\projects\ZooApp-blaze2021\ZooLab\ZooLab\obj\Debug\net5.0\ZooLab.csproj.AssemblyReference.cache
+D:\projects\ZooApp-blaze2021\ZooLab\ZooLab\obj\Debug\net5.0\ZooLab.GeneratedMSBuildEditorConfig.editorconfig
+D:\projects\ZooApp-blaze2021\ZooLab\ZooLab\obj\Debug\net5.0\ZooLab.AssemblyInfoInputs.cache
+D:\projects\ZooApp-blaze2021\ZooLab\ZooLab\obj\Debug\net5.0\ZooLab.AssemblyInfo.cs
+D:\projects\ZooApp-blaze2021\ZooLab\ZooLab\obj\Debug\net5.0\ZooLab.csproj.CoreCompileInputs.cache
+D:\projects\ZooApp-blaze2021\ZooLab\ZooLab\obj\Debug\net5.0\ZooLab.dll
+D:\projects\ZooApp-blaze2021\ZooLab\ZooLab\obj\Debug\net5.0\ref\ZooLab.dll
+D:\projects\ZooApp-blaze2021\ZooLab\ZooLab\obj\Debug\net5.0\ZooLab.pdb
+D:\projects\ZooApp-blaze2021\ZooLab\ZooLab\obj\Debug\net5.0\ZooLab.genruntimeconfig.cache
