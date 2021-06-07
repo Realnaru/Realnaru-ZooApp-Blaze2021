@@ -25,7 +25,7 @@ jobs:
       run: dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutput=TestResults/
     - uses: codecov/codecov-action@v1
       with:
-        token: ${{ 344c3b10-1d62-4674-a929-31d80a10f1db }} # not required for public repos
+        token: 344c3b10-1d62-4674-a929-31d80a10f1db # not required for public repos
         files: ./ZooLab.Tests/ZooLab.Tests/TestResults/coverage.opencover.xml
         flags: unittests 
         name: codecov-umbrella
