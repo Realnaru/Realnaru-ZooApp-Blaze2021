@@ -71,6 +71,8 @@ namespace ZooLab.Tests
             zoo.AddEnclosure("enclosure for lion", 10000);
             Enclosure enclosureForLion = zoo.FindAvailableEnclosure(lion);
             Assert.Equal(enclosureForLion, zoo.Enclosures[0]);
+            enclosureForLion.AddAnimals(lion);
+            Assert.Single(enclosureForLion.Animals);
             
         }
         
@@ -83,7 +85,44 @@ namespace ZooLab.Tests
             Assert.Throws<NoAvailableEnclosureException>( () => {
                 zoo.FindAvailableEnclosure(lion);});
         }
-        
-        
+
+        [Fact]
+        public void ShouldNotBeAbleToHireEmployeeWithoutExpirience()
+        {
+            Zoo zoo = new();
+
+            zoo.AddEnclosure("new enclosure", 10000);
+
+            Elephant elephant = new Elephant();
+
+            Enclosure newEnclousure = zoo.FindAvailableEnclosure(elephant);
+
+            newEnclousure.AddAnimals(elephant);
+
+            IEmployee zooKeeper = new ZooKeeper("First Name", "Last Name");
+
+            Assert.Throws<NoNeededExpirienceException>(() => zoo.HireEmployee(zooKeeper));
+            
+        }
+
+        [Fact]
+        public void ShouldBeAbleToHireExpiriencedEmployee()
+        {
+            Zoo zoo = new();
+            Bison bison = new Bison();
+            zoo.AddEnclosure("new enclosure", 10000);
+            Enclosure newEnclosure = zoo.FindAvailableEnclosure(bison);
+            newEnclosure.AddAnimals(bison);
+            ZooKeeper zooKeeper = new("First Name", "Last Name");
+            zooKeeper.AddAnimalExperience(new Bison());
+            zoo.HireEmployee(zooKeeper);
+            Assert.Equal(zooKeeper, zoo.Employees[0]);
+        }
+
+
+
+
+
+
     }
 }

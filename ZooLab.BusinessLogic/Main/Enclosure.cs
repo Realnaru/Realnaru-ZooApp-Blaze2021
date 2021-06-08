@@ -22,7 +22,6 @@ namespace ZooLab.BusinessLogic
         public string Name { get; private set; }
         public Zoo ParentZoo { get; private set; }
         public int SquareFeet { get; private set; }
-
         public bool IsFriendlyTo(Animal animal)
         {
             foreach (var creature in Animals)

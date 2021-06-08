@@ -37,6 +37,21 @@ namespace ZooLab.BusinessLogic
             }
             throw new NoAvailableEnclosureException();
         }
+
+        public void HireEmployee(IEmployee employee)
+        {
+            HireValidatorProvider validatorProvider = new();
+            IHireValidator employeeValidator = validatorProvider.GetHireValidator(employee);
+            List <ValidationError> errors = employeeValidator.ValidateEmployee(employee, this);
+
+            if (errors.Count == 0)
+            {
+                Employees.Add(employee);
+            } else
+            {
+                throw new NoNeededExpirienceException();
+            }
+        }
             
     }
 }
