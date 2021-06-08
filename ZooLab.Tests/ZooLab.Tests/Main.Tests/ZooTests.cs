@@ -109,20 +109,23 @@ namespace ZooLab.Tests
         public void ShouldBeAbleToHireExpiriencedEmployee()
         {
             Zoo zoo = new();
+
             Bison bison = new Bison();
+
             zoo.AddEnclosure("new enclosure", 10000);
+
             Enclosure newEnclosure = zoo.FindAvailableEnclosure(bison);
+
             newEnclosure.AddAnimals(bison);
+
             ZooKeeper zooKeeper = new("First Name", "Last Name");
+
             zooKeeper.AddAnimalExperience(new Bison());
+
             zoo.HireEmployee(zooKeeper);
+
             Assert.Equal(zooKeeper, zoo.Employees[0]);
+
         }
-
-
-
-
-
-
     }
 }
