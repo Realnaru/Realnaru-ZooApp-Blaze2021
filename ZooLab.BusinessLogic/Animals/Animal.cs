@@ -30,13 +30,14 @@ namespace ZooLab.BusinessLogic
             FeedSchedule = hours;
         }
 
-        public void Feed(Food food)
+        public void Feed(Food food, IConsole zooConsole = null)
         {
             foreach (var anyFood in FavoriteFood)
             {
                 if (food.GetType().Name == anyFood)
                 {
                     IsHungry = false;
+                    
                 }
             }
         }

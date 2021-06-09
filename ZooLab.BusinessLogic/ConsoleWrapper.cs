@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ZooLab.BusinessLogic
 {
-    class ConsoleWrapper : IConsoleWrapper
+    class ConsoleWrapper : IConsole
     {
         List<string> Logs { get; set; } = new List<string>();
         public void WriteLine(string anyText)

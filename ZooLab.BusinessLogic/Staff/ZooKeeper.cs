@@ -40,7 +40,7 @@ namespace ZooLab.BusinessLogic
             return false;
         }
         
-        public bool FeedAnimal(Animal animal)
+        public bool FeedAnimal(Animal animal, IConsole zooConsole = null)
         {
             if (HasAnimalExperience(animal) && (animal.IsHungry || animal.FeedSchedule.Count > 0 && animal.FeedSchedule[0] > Convert.ToInt32(DateTime.Now.Hour) || animal.FeedSchedule[1] > Convert.ToInt32(DateTime.Now.Hour)))
             {
@@ -53,6 +53,7 @@ namespace ZooLab.BusinessLogic
                             animal.Feed(availableFood);
                             FeedTime feedTime = new();
                             feedTime.TimeToFeed = DateTime.Now;
+                            zooConsole?.WriteLine($"{animal.GetType().Name} was fed by {this.FirstName} {this.LastName} at {feedTime.TimeToFeed}");
                             feedTime.FedByZookeeper = this;
                             animal.FeedTimes.Add(feedTime);
                             return true;

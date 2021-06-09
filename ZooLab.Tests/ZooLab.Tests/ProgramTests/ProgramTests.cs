@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Xunit;
+using ZooLab;
 
-namespace ZooLab.BusinessLogic
+namespace ZooLab.Tests
 {
-    public interface IConsoleWrapper
+    class ProgramTests
     {
-        public void WriteLine(string anyText);
+
     }
 }

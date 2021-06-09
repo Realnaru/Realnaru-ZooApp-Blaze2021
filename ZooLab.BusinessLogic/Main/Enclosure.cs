@@ -13,7 +13,6 @@ namespace ZooLab.BusinessLogic
             ParentZoo = parentZoo;
             Name = name;
             SquareFeet = sqFeet;
-
         }
         public List<Animal> Animals { get; private set; } = new List<Animal>();
         public string Name { get; private set; }

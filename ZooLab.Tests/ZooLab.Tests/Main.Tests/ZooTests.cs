@@ -270,6 +270,47 @@ namespace ZooLab.Tests
             Assert.Throws<NoEmployeesException>(() => zoo.HealAnimals());
         }
 
+        /*
+        [Fact]
+        public void ShouldDivideAnimalsWhenThereAreMoreThanOneZooKeeper()
+        {
+            Zoo zoo = new();
+            zoo.AddEnclosure("", 10000);
 
+            Elephant elephant = new();
+            Bison bison = new();
+
+            elephant.IsHungry = true;
+            bison.IsHungry = true;
+
+            Enclosure enclosureOne = zoo.FindAvailableEnclosure(elephant);
+            Enclosure enclosureTwo = zoo.FindAvailableEnclosure(bison);
+
+            enclosureOne.AddAnimals(elephant);
+            enclosureOne.AddAnimals(bison);
+
+            ZooKeeper firstZooKeeper = new("", "");
+            ZooKeeper secondZooKeeper = new("first", "last");
+
+            firstZooKeeper.AddAnimalExperience(new Elephant());
+            firstZooKeeper.AddAnimalExperience(new Bison());
+
+            secondZooKeeper.AddAnimalExperience(new Elephant());
+            secondZooKeeper.AddAnimalExperience(new Bison());
+
+            firstZooKeeper.AvailableFood.Add(new Grass());
+            secondZooKeeper.AvailableFood.Add(new Grass());
+
+
+            zoo.HireEmployee(firstZooKeeper);
+            zoo.HireEmployee(secondZooKeeper);
+
+            zoo.FeedAnimals();
+
+            Assert.Equal(firstZooKeeper, elephant.FeedTimes[0].FedByZookeeper);
+            Assert.Equal(secondZooKeeper, bison.FeedTimes[0].FedByZookeeper);
+
+        }
+        */
     }
 }
