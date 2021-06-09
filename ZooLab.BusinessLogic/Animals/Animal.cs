@@ -11,9 +11,9 @@ namespace ZooLab.BusinessLogic
         public abstract int RequiredSpaceSqFeet { get; }
         public abstract string[] FavoriteFood { get; }
 
-        public List<FeedTime> FeedTimes { get; set; }
+        public List<FeedTime> FeedTimes { get; set; } = new List<FeedTime>();
 
-        public List<int> FeedSchedule { get; private set; }
+        public List<int> FeedSchedule { get; private set; } = new List<int>();
 
         public string NeededMedicine { get; } = new string[3] {"Antibiotic", "AntiDepression", "AntiInflammatory"}[new Random().Next(0, 3)];  
 

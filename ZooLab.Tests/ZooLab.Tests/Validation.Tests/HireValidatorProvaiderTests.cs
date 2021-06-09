@@ -17,7 +17,7 @@ namespace ZooLab.Tests
         }
 
         [Fact]
-        public void ShouldBeAbleToGetHireValidator()
+        public void ShouldBeAbleToGetHireValidatorThenForEmployee()
         {
             HireValidatorProvider hireValidatorProvider = new();
             IEmployee zooKeeper = new ZooKeeper("First Name", "LastName");

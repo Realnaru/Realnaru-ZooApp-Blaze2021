@@ -8,6 +8,16 @@ namespace ZooLab.BusinessLogic
 {
     public class Zoo
     {
+        public Zoo()
+        {
+
+        }
+        public Zoo(string location)
+        {
+            Location = location;
+        }
+
+        public int StartingId { get; internal set; } = 1;
         public List<Enclosure> Enclosures { get; private set; } = new List<Enclosure>();
 
         public List<IEmployee> Employees { get; private set; } = new List<IEmployee>();
@@ -21,7 +31,7 @@ namespace ZooLab.BusinessLogic
 
         public void AddEnclosure(string name, int area)
         {
-            Enclosure enclosure = new Enclosure(name, area);
+            Enclosure enclosure = new Enclosure(this, name, area);
             Enclosures.Add(enclosure);
         }
 
@@ -50,6 +60,61 @@ namespace ZooLab.BusinessLogic
             } else
             {
                 throw new NoNeededExpirienceException();
+            }
+        }
+
+        public void FeedAnimals()
+        {
+            if (Employees.Count != 0)
+            {
+                foreach (var employee in Employees)
+                {
+                    if(employee.GetType().Name == typeof(ZooKeeper).Name)
+                    {
+                        foreach (var enclosure in Enclosures)
+                        {
+                            foreach (var creature in enclosure.Animals)
+                            {
+                                (employee as ZooKeeper).FeedAnimal(creature);
+                            }
+                        }
+                        break;
+                    } else
+                    {
+                        throw new NoNeededEmployeeException();
+                    }
+                }
+            } else
+            {
+                throw new NoEmployeesException();
+            }
+        }
+
+        public void HealAnimals()
+        {
+            if (Employees.Count != 0)
+            {
+                foreach(var employee in Employees)
+                {
+                    if (employee.GetType().Name == typeof(Veterinarian).Name)
+                    {
+                        foreach (var enclosure in Enclosures)
+                        {
+                            foreach (var creature in enclosure.Animals)
+                            {
+                                (employee as Veterinarian).HealAnimal(creature);
+                            }
+                        }
+                        break;
+                    } else
+                    {
+                        throw new NoNeededEmployeeException();
+                    }
+                             
+                }
+            } else
+            {
+                throw new NoEmployeesException();
             }
         }
             

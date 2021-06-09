@@ -19,7 +19,7 @@ namespace ZooLab.Tests
         }
 
         [Fact]
-        public void ShouldBeAbleToValidateEmployee()
+        public void ShouldBeAbleToValidateEmployeeAsZooKeeper()
         {
             Zoo zoo = new Zoo();
             ZooKeeperHireValidator zooKeeperHireValidator = new();

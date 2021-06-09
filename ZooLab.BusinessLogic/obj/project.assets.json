@@ -32,11 +32,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\projects\\ZooApp-blaze2021\\ZooLab\\ZooLab.BusinessLogic\\ZooLab.BusinessLogic.csproj",
+      "projectUniqueName": "D:\\ZooApp-Blaze2021\\ZooLab.BusinessLogic\\ZooLab.BusinessLogic.csproj",
       "projectName": "ZooLab.BusinessLogic",
-      "projectPath": "D:\\projects\\ZooApp-blaze2021\\ZooLab\\ZooLab.BusinessLogic\\ZooLab.BusinessLogic.csproj",
+      "projectPath": "D:\\ZooApp-Blaze2021\\ZooLab.BusinessLogic\\ZooLab.BusinessLogic.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "D:\\projects\\ZooApp-blaze2021\\ZooLab\\ZooLab.BusinessLogic\\obj\\",
+      "outputPath": "D:\\ZooApp-Blaze2021\\ZooLab.BusinessLogic\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -53,8 +53,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\projects\\ZooApp-blaze2021\\ZooLab\\ZooLab\\ZooLab.csproj": {
-              "projectPath": "D:\\projects\\ZooApp-blaze2021\\ZooLab\\ZooLab\\ZooLab.csproj"
+            "D:\\ZooApp-Blaze2021\\ZooLab\\ZooLab.csproj": {
+              "projectPath": "D:\\ZooApp-Blaze2021\\ZooLab\\ZooLab.csproj"
             }
           }
         }

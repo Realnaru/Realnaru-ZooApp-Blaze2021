@@ -16,5 +16,18 @@ using ZooLab.BusinessLogic;
             VeterinarianHireValidator veterinarianHireValidator = new();
         }
 
+        [Fact]
+        public void ShouldBeAbleToValidateEmployeeZsVeterainarian()
+        {
+            Zoo zoo = new Zoo();
+            VeterinarianHireValidator veterinarianHireValidator = new();
+            IEmployee employee = new Veterinarian("First Name", "Last Name");
+            List<ValidationError> errors = veterinarianHireValidator.ValidateEmployee(employee, zoo);
+        }
+
+
+
+
+
     }
 }

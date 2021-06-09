@@ -84,7 +84,7 @@ namespace ZooLab.Tests
         }
 
         [Fact]
-        public void ShouldNotBeAbleToFeedSickAnimalIfHasNoExperience()
+        public void ShouldNotBeAbleToFeedHungryAnimalIfHasNoExperience()
         {
             ZooKeeper zooKeeper = new ("First Name", "Last Name");
             Animal lion = new Lion();
@@ -92,33 +92,52 @@ namespace ZooLab.Tests
             zooKeeper.AddAnimalExperience(new Bison());
             bool canZooKeeperHealBison = zooKeeper.FeedAnimal(lion);
             Assert.False(canZooKeeperHealBison);
-            Assert.True(lion.IsSick);
+            Assert.True(lion.IsHungry);
         }
 
         [Fact]
-        public void ShouldNotBeAbleToFeedSickAnimalIfHasNoFavoriteFood()
+        public void ShouldNotBeAbleToFeedHungryAnimalIfHasNoFavoriteFood()
         {
             ZooKeeper zooKeeper = new("First Name", "Last Name");
             zooKeeper.AvailableFood.Add(new Vegetable());
             Animal lion = new Lion();
-            lion.IsSick = true;
+            lion.IsHungry = true;
             zooKeeper.AddAnimalExperience(new Lion());
             bool canZooKeeperFeedLion = zooKeeper.FeedAnimal(lion);
-            Assert.True(lion.IsSick);
+            Assert.True(lion.IsHungry);
             Assert.False(canZooKeeperFeedLion);
             
         }
 
         [Fact]
-        public void ShouldNotHealHealthyAnimal()
+        public void ShouldBeAbleToFeedlAnimalIfItIsTimeToFeed()
         {
-            ZooKeeper zooKeeper = new ("First Name", "Last Name");
-            Animal lion = new Lion();
-            lion.IsSick = false;
-            zooKeeper.AddAnimalExperience(new Lion());
-            bool canZooKeeperHealBison = zooKeeper.FeedAnimal(lion);
-            Assert.False(canZooKeeperHealBison);
-            Assert.False(lion.IsSick);
+            ZooKeeper zooKeeper = new("First Name", "Last Name");
+            zooKeeper.AvailableFood.Add(new Grass());
+            Animal bison = new Bison();
+            bison.IsHungry = false;
+            bison.FeedSchedule.Add(100);
+            bison.FeedSchedule.Add(100);
+            zooKeeper.AddAnimalExperience(bison);
+            bool canZooKeeperFeedBison = zooKeeper.FeedAnimal(bison);
+            Assert.True(canZooKeeperFeedBison);
+            
         }
+
+        [Fact]
+        public void ShouldNotBeAbleToFeedlAnimalIfItIsNotTimeToFeed()
+        {
+            ZooKeeper zooKeeper = new("First Name", "Last Name");
+            zooKeeper.AvailableFood.Add(new Grass());
+            Animal bison = new Bison();
+            bison.IsHungry = false;
+            bison.FeedSchedule.Add(0);
+            bison.FeedSchedule.Add(0);
+            zooKeeper.AddAnimalExperience(bison);
+            bool canZooKeeperFeedBison = zooKeeper.FeedAnimal(bison);
+            Assert.False(canZooKeeperFeedBison);
+
+        }
+
     }
 }

@@ -11,59 +11,63 @@ namespace ZooLab.Tests
     public class EnclosureTests
     {
         [Fact]
-        public void ShouldBeAbleToCreateEnclosure()
+        public void ShouldBeAbleToCreateEnclosureWithNameAreaAndParentZoo()
         {
-            Enclosure enclosure = new Enclosure();
+            Enclosure enclosure = new Enclosure(new Zoo(),"anyName", 5);
 
-        }
-
-        [Fact]
-        public void ShouldBeAbleToCreateEnclosureWithNameAndArea()
-        {
-            Enclosure enclosure = new Enclosure("anyName", 5);
         }
 
         [Fact]
         public void ShouldBeAbleToGetName()
         {
-            Enclosure enclosure = new Enclosure();
+            Enclosure enclosure = new Enclosure(new Zoo(), "Some name", 1000);
             string anyName = enclosure.Name;
         }
 
         [Fact]
         public void ShouldBeAbleToGetAnimals()
         {
-            Enclosure enclosure = new Enclosure();
+            Enclosure enclosure = new Enclosure(new Zoo(), "Some name", 1000);
             List<Animal> animals = enclosure.Animals; 
         }
 
         [Fact]
         public void ShouldBeAbleToGetParentZoo()
         {
-            Enclosure enclosure = new Enclosure();
+            Enclosure enclosure = new Enclosure(new Zoo(), "Some name", 1000);
             Zoo anyZoo = enclosure.ParentZoo;
         }
 
         [Fact]
         public void ShouldBeAbleToGetSquareFeet()
         {
-            Enclosure enclosure = new Enclosure();
+            Enclosure enclosure = new Enclosure(new Zoo(), "Some name", 1000);
             int anyArea = enclosure.SquareFeet;
         }
 
         [Fact]
         public void ShouldBeAbleToAddAnimalsIfThereIsSpaceAndNoUnfriendlyAnimals()
         {
-            Enclosure enclosure = new("huge enclosure", 100000);
+            Enclosure enclosure = new(new Zoo(),"huge enclosure", 100000);
             Elephant elephant = new Elephant();
             enclosure.AddAnimals(elephant);
             Assert.Equal(elephant, enclosure.Animals[0]);
         }
 
         [Fact]
+        public void ShouldBeAbleToTagAddedAnimal()
+        {
+            Zoo parentZoo = new();
+            Enclosure enclosure = new(parentZoo, "huge enclosure", 100000);
+            Elephant elephant = new Elephant();
+            enclosure.AddAnimals(elephant);
+            Assert.Equal(1, elephant.Id);
+        }
+
+        [Fact]
         public void ShouldBeNotAbleToAddAnimalsIfThereIsNoSpace()
         {
-            Enclosure enclosure = new("tiny enclosure", 5);
+            Enclosure enclosure = new(new Zoo(), "tiny enclosure", 5);
             Elephant elephant = new Elephant();
             Assert.Throws<NoAvailableSpaceException>(() => enclosure.AddAnimals(elephant));
         }
@@ -71,7 +75,7 @@ namespace ZooLab.Tests
         [Fact]
         public void ShouldBeNotAbleToAddAnimalsIfThereIsUnfriendlyAnimal()
         {
-            Enclosure enclosure = new("huge enclosure", 10000);
+            Enclosure enclosure = new(new Zoo(), "huge enclosure", 10000);
             enclosure.AddAnimals(new Lion());
             Elephant elephant = new Elephant();
             Assert.Throws<NotFriendlyAnimalException>(() => enclosure.AddAnimals(elephant));
@@ -80,12 +84,12 @@ namespace ZooLab.Tests
         [Fact]
         public void ShouldBeAbleToDecideIsEnclosureSafeForAnimal()
         {
-            Enclosure firstEnclosure = new("huge enclosure", 10000);
+            Enclosure firstEnclosure = new(new Zoo(), "huge enclosure", 10000);
             firstEnclosure.AddAnimals(new Lion());
             bool isFriendlyToBison = firstEnclosure.IsFriendlyTo(new Bison());
             Assert.False(isFriendlyToBison);
 
-            Enclosure secondEnclosure = new("big enclosure", 9000);
+            Enclosure secondEnclosure = new(new Zoo(), "big enclosure", 9000);
             secondEnclosure.AddAnimals(new Bison());
             bool isFriendlyToAnotherBison = secondEnclosure.IsFriendlyTo(new Bison());
             Assert.True(isFriendlyToAnotherBison);

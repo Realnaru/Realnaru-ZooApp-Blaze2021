@@ -8,12 +8,9 @@ namespace ZooLab.BusinessLogic
 {
     public class Enclosure
     {
-        public Enclosure()
+        public Enclosure(Zoo parentZoo, string name, int sqFeet)
         {
-
-        }
-        public Enclosure(string name, int sqFeet)
-        {
+            ParentZoo = parentZoo;
             Name = name;
             SquareFeet = sqFeet;
 
@@ -46,6 +43,8 @@ namespace ZooLab.BusinessLogic
                     }
                 }
                 Animals.Add(animal);
+                animal.Id = ParentZoo.StartingId;
+                ParentZoo.StartingId++;
                 SquareFeet -= animal.RequiredSpaceSqFeet;
             } else
             {

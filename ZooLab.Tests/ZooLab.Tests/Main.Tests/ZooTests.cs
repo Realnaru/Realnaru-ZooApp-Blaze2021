@@ -17,6 +17,20 @@ namespace ZooLab.Tests
         }
 
         [Fact]
+        public void ShoulBeAbleToGetIdForAnimals()
+        {
+            Zoo zoo = new Zoo();
+            Assert.Equal(1, zoo.StartingId);
+
+        }
+
+        [Fact]
+        public void ShoulBeAbleToCreateZooWithLocation()
+        {
+            Zoo zoo = new Zoo("San-Diego");
+        }
+
+        [Fact]
         public void ShoulBeAbleToGetEnclosures()
         {
             Zoo zoo = new Zoo();
@@ -87,7 +101,7 @@ namespace ZooLab.Tests
         }
 
         [Fact]
-        public void ShouldNotBeAbleToHireEmployeeWithoutExpirience()
+        public void ShouldNotBeAbleToHireZooKeeperWithoutExpirience()
         {
             Zoo zoo = new();
 
@@ -106,26 +120,156 @@ namespace ZooLab.Tests
         }
 
         [Fact]
-        public void ShouldBeAbleToHireExpiriencedEmployee()
+        public void ShouldNotBeAbleToHireVeterinarianWithoutExpirience()
         {
             Zoo zoo = new();
 
-            Bison bison = new Bison();
-
             zoo.AddEnclosure("new enclosure", 10000);
+            zoo.AddEnclosure("another enclosure", 10000);
 
+            Elephant elephant = new Elephant();
+            Bison bison = new();
+
+            Enclosure newEnclousure = zoo.FindAvailableEnclosure(elephant);
+
+            Enclosure anotherEnclousure = zoo.FindAvailableEnclosure(bison);
+
+            newEnclousure.AddAnimals(elephant);
+
+            anotherEnclousure.AddAnimals(bison);
+
+            Veterinarian veterinarian = new Veterinarian("First Name", "Last Name");
+            veterinarian.AddAnimalExperience(new Elephant());
+
+            Assert.Throws<NoNeededExpirienceException>(() => zoo.HireEmployee(veterinarian));
+
+        }
+
+        [Fact]
+        public void ShouldBeAbleToHireExpiriencedZooKeeper()
+        {
+            Zoo zoo = new();
+            Bison bison = new Bison();
+            zoo.AddEnclosure("new enclosure", 10000);
             Enclosure newEnclosure = zoo.FindAvailableEnclosure(bison);
-
             newEnclosure.AddAnimals(bison);
-
             ZooKeeper zooKeeper = new("First Name", "Last Name");
-
             zooKeeper.AddAnimalExperience(new Bison());
+            zoo.HireEmployee(zooKeeper);
+            Assert.Equal(zooKeeper, zoo.Employees[0]);
+        }
+
+        [Fact]
+        public void ShouldBeAbleToHireExpiriencedVeterinarian()
+        {
+            Zoo zoo = new();
+            Bison bison = new Bison();
+            zoo.AddEnclosure("new enclosure", 10000);
+            Enclosure newEnclosure = zoo.FindAvailableEnclosure(bison);
+            newEnclosure.AddAnimals(bison);
+            Veterinarian veterinarian = new("First Name", "Last Name");
+            veterinarian.AddAnimalExperience(new Bison());
+            zoo.HireEmployee(veterinarian);
+            Assert.Equal(veterinarian, zoo.Employees[0]);
+        }
+
+        [Fact]
+        public void ShouldBeAbleToFeedAllAnimals()
+        {
+            Zoo zoo = new();
+
+            zoo.AddEnclosure("Lions enclosure", 10000);
+            zoo.AddEnclosure("Elephants enclosure", 10000);
+
+            Lion lion = new();
+            Elephant elephant = new();
+
+            ZooKeeper zooKeeper = new("John", "Doe");
+            zooKeeper.AvailableFood.Add(new Grass());
+            zooKeeper.AvailableFood.Add(new Vegetable());
+            zooKeeper.AvailableFood.Add(new Meat());
+            zooKeeper.AddAnimalExperience(lion);
+            zooKeeper.AddAnimalExperience(elephant);
 
             zoo.HireEmployee(zooKeeper);
 
-            Assert.Equal(zooKeeper, zoo.Employees[0]);
+            lion.IsHungry = true;
+            elephant.IsHungry = true;
 
+            zoo.FindAvailableEnclosure(lion).AddAnimals(lion);
+            zoo.FindAvailableEnclosure(elephant).AddAnimals(elephant);
+
+            zoo.FeedAnimals();
+
+            Assert.False(lion.IsHungry);
+            Assert.False(elephant.IsHungry);
         }
+
+        [Fact]
+        public void ShouldBeAbleToHealAllAnimals()
+        {
+            Zoo zoo = new();
+
+            zoo.AddEnclosure("Lions enclosure", 10000);
+            zoo.AddEnclosure("Elephants enclosure", 10000);
+
+            Lion lion = new();
+            Elephant elephant = new();
+
+            Veterinarian veterinarian = new("John", "Doe");
+
+            veterinarian.AvailableMedicine.Add(new Antibiotic());
+            veterinarian.AvailableMedicine.Add(new AntiDepression());
+            veterinarian.AvailableMedicine.Add(new AntiInflammatory());
+            veterinarian.AddAnimalExperience(lion);
+            veterinarian.AddAnimalExperience(elephant);
+
+            zoo.HireEmployee(veterinarian);
+
+            lion.IsSick = true;
+            elephant.IsSick = true;
+
+            zoo.FindAvailableEnclosure(lion).AddAnimals(lion);
+            zoo.FindAvailableEnclosure(elephant).AddAnimals(elephant);
+
+            zoo.HealAnimals();
+
+            Assert.False(lion.IsSick);
+            Assert.False(elephant.IsSick);
+        }
+
+        [Fact]
+        public void ShouldThrowExceptionIfThereIsAreZooKeepersHired()
+        {
+            Zoo zoo = new();
+            zoo.Employees.Add(new Veterinarian("",""));
+
+            Assert.Throws<NoNeededEmployeeException>(() => zoo.FeedAnimals());
+        }
+
+        [Fact]
+        public void ShouldThrowExceptionIfThereIsAreNoVeterinariansHired()
+        {
+            Zoo zoo = new();
+            zoo.Employees.Add(new ZooKeeper("", ""));
+
+            Assert.Throws<NoNeededEmployeeException>(() => zoo.HealAnimals());
+        }
+
+        [Fact]
+        public void ShouldThrowExceptionIfThereIsAreNoEmployeesThenTryingToFeedAnimals()
+        {
+            Zoo zoo = new();
+            Assert.Throws<NoEmployeesException>(() => zoo.FeedAnimals());
+        }
+
+        [Fact]
+        public void ShouldThrowExceptionIfThereIsAreNoEmployeesThenTryingToHealAnimals()
+        {
+            Zoo zoo = new();
+            Assert.Throws<NoEmployeesException>(() => zoo.HealAnimals());
+        }
+
+
     }
 }
