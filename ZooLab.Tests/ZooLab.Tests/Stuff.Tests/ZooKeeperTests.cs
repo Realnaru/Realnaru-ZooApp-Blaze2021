@@ -88,7 +88,7 @@ namespace ZooLab.Tests
         {
             ZooKeeper zooKeeper = new ("First Name", "Last Name");
             Animal lion = new Lion();
-            lion.IsSick = true;
+            lion.IsHungry = true;
             zooKeeper.AddAnimalExperience(new Bison());
             bool canZooKeeperHealBison = zooKeeper.FeedAnimal(lion);
             Assert.False(canZooKeeperHealBison);

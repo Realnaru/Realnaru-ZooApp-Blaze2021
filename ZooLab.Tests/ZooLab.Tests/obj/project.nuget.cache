@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+917OUPpk/Pw/rU8Zsopo2tinesWzvluZYgPYXGRwLeIYEulv6ALIOrjGjcqqiC/E0bsqC/131tOF0sqHMGrqQ==",
+  "dgSpecHash": "6nB2pWVWw/X823+Bm9VHeSYSrXZHSHrixr1fcfOYQqp3YdL/ebdlHvxftIZI8S9WpkY1eRRh1vek4eENMbbQcw==",
   "success": true,
-  "projectFilePath": "D:\\ZooApp-Blaze2021\\ZooLab.Tests\\ZooLab.Tests\\ZooLab.Tests.csproj",
+  "projectFilePath": "D:\\projects\\ZooApp-blaze2021\\ZooLab\\ZooLab.Tests\\ZooLab.Tests\\ZooLab.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\User\\.nuget\\packages\\coverlet.collector\\1.3.0\\coverlet.collector.1.3.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\coverlet.msbuild\\3.0.3\\coverlet.msbuild.3.0.3.nupkg.sha512",

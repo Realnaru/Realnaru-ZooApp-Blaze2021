@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\ZooApp-Blaze2021\\ZooLab\\ZooLab.csproj": {}
+    "D:\\projects\\ZooApp-blaze2021\\ZooLab\\ZooLab\\ZooLab.csproj": {}
   },
   "projects": {
-    "D:\\ZooApp-Blaze2021\\ZooLab\\ZooLab.csproj": {
+    "D:\\projects\\ZooApp-blaze2021\\ZooLab\\ZooLab\\ZooLab.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ZooApp-Blaze2021\\ZooLab\\ZooLab.csproj",
+        "projectUniqueName": "D:\\projects\\ZooApp-blaze2021\\ZooLab\\ZooLab\\ZooLab.csproj",
         "projectName": "ZooLab",
-        "projectPath": "D:\\ZooApp-Blaze2021\\ZooLab\\ZooLab.csproj",
+        "projectPath": "D:\\projects\\ZooApp-blaze2021\\ZooLab\\ZooLab\\ZooLab.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\ZooApp-Blaze2021\\ZooLab\\obj\\",
+        "outputPath": "D:\\projects\\ZooApp-blaze2021\\ZooLab\\ZooLab\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
