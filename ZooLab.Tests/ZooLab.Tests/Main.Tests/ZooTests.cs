@@ -270,7 +270,6 @@ namespace ZooLab.Tests
             Assert.Throws<NoEmployeesException>(() => zoo.HealAnimals());
         }
 
-        /*
         [Fact]
         public void ShouldDivideAnimalsWhenThereAreMoreThanOneZooKeeper()
         {
@@ -302,15 +301,14 @@ namespace ZooLab.Tests
             secondZooKeeper.AvailableFood.Add(new Grass());
 
 
-            zoo.HireEmployee(firstZooKeeper);
-            zoo.HireEmployee(secondZooKeeper);
+            zoo.Employees.Add(firstZooKeeper);
+            zoo.Employees.Add(secondZooKeeper);
 
             zoo.FeedAnimals();
 
-            Assert.Equal(firstZooKeeper, elephant.FeedTimes[0].FedByZookeeper);
+            //Assert.Equal(firstZooKeeper, elephant.FeedTimes[0].FedByZookeeper);
             Assert.Equal(secondZooKeeper, bison.FeedTimes[0].FedByZookeeper);
 
         }
-        */
     }
 }

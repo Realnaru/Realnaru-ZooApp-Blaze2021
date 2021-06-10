@@ -75,38 +75,63 @@ namespace ZooLab.BusinessLogic
 
         public void FeedAnimals()
         {
+            List < ZooKeeper > zooKepers = new List<ZooKeeper>();
+
             if (Employees.Count != 0)
             {
                 foreach (var employee in Employees)
                 {
                     if (employee.GetType().Name == typeof(ZooKeeper).Name)
                     {
+                        zooKepers.Add(employee as ZooKeeper);
+                    }
+                }
+
+                if (zooKepers.Count != 0)
+                {
+                    if (zooKepers.Count == 1)
+                    {
                         foreach (var enclosure in Enclosures)
                         {
-                            foreach (var creature in enclosure.Animals)
+                            foreach(var creature in enclosure.Animals)
                             {
-                                if ((employee as ZooKeeper).FeedAnimal(creature))
+                                if (zooKepers[0].FeedAnimal(creature))
                                 {
-                                    zooConsole?.WriteLine($"{creature.GetType().Name} was fed by {employee.FirstName} {employee.LastName}");
+                                    zooConsole?.WriteLine($"{creature.GetType().Name} was fed by {zooKepers[0].FirstName} {zooKepers[0].LastName}");
                                 }
-                                
+                            } 
+                        }
+                    } else
+                    {
+                        int count = 0;
+                        foreach (var enclosure in Enclosures)
+                        {
+                            foreach(var creature in enclosure.Animals)
+                            {
+                                count++;
+                                if (count <= this.StartingId / 2)
+                                {
+                                    zooKepers[0].FeedAnimal(creature);
+                                } else
+                                {
+                                    zooKepers[1].FeedAnimal(creature);
+                                }
                             }
                         }
-                        break;
-                    }
-                    else
-                    {
-                        zooConsole?.WriteLine($"Zoo has no ZooKeepers, hire at least one");
-                        throw new NoNeededEmployeeException();
                     }
 
+                } else
+                {
+                    zooConsole?.WriteLine("There are no zookeepers");
+                    throw new NoNeededEmployeeException();
                 }
             }
             else
             {
-                zooConsole?.WriteLine($"Zoo has no employee, hire at least one");
+                zooConsole?.WriteLine("There are no employees");
                 throw new NoEmployeesException();
             }
+           
 
         }
 
