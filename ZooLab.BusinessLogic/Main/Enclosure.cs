@@ -42,6 +42,15 @@ namespace ZooLab.BusinessLogic
                     }
                 }
                 Animals.Add(animal);
+
+                foreach (var employee in ParentZoo.Employees)
+                {
+                    if ((employee.GetType().Name == typeof(ZooKeeper).Name))
+                    {
+                        (employee as ZooKeeper).AddAnimalExperience(animal);
+                    }
+                }
+
                 animal.Id = ParentZoo.StartingId;
                 ParentZoo.StartingId++;
                 SquareFeet -= animal.RequiredSpaceSqFeet;
