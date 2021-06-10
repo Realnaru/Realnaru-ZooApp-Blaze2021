@@ -96,5 +96,18 @@ namespace ZooLab.Tests
 
         }
 
+        [Fact]
+        public void ShouldAddAnimalExpirienceToZooKeepersThenNewAnimalISAddedToZoo()
+        {
+            Zoo zoo = new();
+            ZooKeeper zooKeeper = new("", "");
+            zoo.Employees.Add(zooKeeper);
+            zoo.Enclosures.Add(new Enclosure(zoo, "", 10000));
+            Lion lion = new();
+            Enclosure enclosureForLion = zoo.FindAvailableEnclosure(lion);
+            enclosureForLion.AddAnimals(lion);
+            Assert.Equal(zooKeeper.AnimalExperience[0], lion.GetType().Name);
+        }
+
     }
 }

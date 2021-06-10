@@ -79,29 +79,35 @@ namespace ZooLab.BusinessLogic
             {
                 foreach (var employee in Employees)
                 {
-                    if(employee.GetType().Name == typeof(ZooKeeper).Name)
+                    if (employee.GetType().Name == typeof(ZooKeeper).Name)
                     {
                         foreach (var enclosure in Enclosures)
                         {
                             foreach (var creature in enclosure.Animals)
                             {
-                                
-                                (employee as ZooKeeper).FeedAnimal(creature);
+                                if ((employee as ZooKeeper).FeedAnimal(creature))
+                                {
+                                    zooConsole?.WriteLine($"{creature.GetType().Name} was fed by {employee.FirstName} {employee.LastName}");
+                                }
                                 
                             }
                         }
                         break;
-                    } else
+                    }
+                    else
                     {
-                        zooConsole?.WriteLine($"Zoo has no zookeeper, hire at least one");
+                        zooConsole?.WriteLine($"Zoo has no ZooKeepers, hire at least one");
                         throw new NoNeededEmployeeException();
                     }
+
                 }
-            } else
+            }
+            else
             {
-                zooConsole?.WriteLine($"Zoo has no employees hired");
+                zooConsole?.WriteLine($"Zoo has no employee, hire at least one");
                 throw new NoEmployeesException();
             }
+
         }
 
         public void HealAnimals()

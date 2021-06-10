@@ -5724,19 +5724,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {}
+    "C:\\Users\\opishnyak_ry\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\projects\\ZooApp-blaze2021\\ZooLab\\ZooLab.Tests\\ZooLab.Tests\\ZooLab.Tests.csproj",
+      "projectUniqueName": "C:\\Doc\\projects\\ZooApp-Blaze2021\\ZooLab.Tests\\ZooLab.Tests\\ZooLab.Tests.csproj",
       "projectName": "ZooLab.Tests",
-      "projectPath": "D:\\projects\\ZooApp-blaze2021\\ZooLab\\ZooLab.Tests\\ZooLab.Tests\\ZooLab.Tests.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "D:\\projects\\ZooApp-blaze2021\\ZooLab\\ZooLab.Tests\\ZooLab.Tests\\obj\\",
+      "projectPath": "C:\\Doc\\projects\\ZooApp-Blaze2021\\ZooLab.Tests\\ZooLab.Tests\\ZooLab.Tests.csproj",
+      "packagesPath": "C:\\Users\\opishnyak_ry\\.nuget\\packages\\",
+      "outputPath": "C:\\Doc\\projects\\ZooApp-Blaze2021\\ZooLab.Tests\\ZooLab.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\opishnyak_ry\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5750,11 +5750,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\projects\\ZooApp-blaze2021\\ZooLab\\ZooLab.BusinessLogic\\ZooLab.BusinessLogic.csproj": {
-              "projectPath": "D:\\projects\\ZooApp-blaze2021\\ZooLab\\ZooLab.BusinessLogic\\ZooLab.BusinessLogic.csproj"
+            "C:\\Doc\\projects\\ZooApp-Blaze2021\\ZooLab.BusinessLogic\\ZooLab.BusinessLogic.csproj": {
+              "projectPath": "C:\\Doc\\projects\\ZooApp-Blaze2021\\ZooLab.BusinessLogic\\ZooLab.BusinessLogic.csproj"
             },
-            "D:\\projects\\ZooApp-blaze2021\\ZooLab\\ZooLab\\ZooLab.csproj": {
-              "projectPath": "D:\\projects\\ZooApp-blaze2021\\ZooLab\\ZooLab\\ZooLab.csproj"
+            "C:\\Doc\\projects\\ZooApp-Blaze2021\\ZooLab\\ZooLab.csproj": {
+              "projectPath": "C:\\Doc\\projects\\ZooApp-Blaze2021\\ZooLab\\ZooLab.csproj"
             }
           }
         }
@@ -5811,7 +5811,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -53,7 +53,6 @@ namespace ZooLab.BusinessLogic
                             animal.Feed(availableFood);
                             FeedTime feedTime = new();
                             feedTime.TimeToFeed = DateTime.Now;
-                            zooConsole?.WriteLine($"{animal.GetType().Name} was fed by {this.FirstName} {this.LastName} at {feedTime.TimeToFeed}");
                             feedTime.FedByZookeeper = this;
                             animal.FeedTimes.Add(feedTime);
                             return true;
