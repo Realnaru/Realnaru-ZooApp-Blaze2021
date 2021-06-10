@@ -8,19 +8,19 @@
     "net5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\opishnyak_ry\\.nuget\\packages\\": {}
+    "C:\\Users\\User\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Doc\\projects\\ZooApp-Blaze2021\\ZooLab\\ZooLab.csproj",
+      "projectUniqueName": "D:\\projects\\ZooApp-blaze2021\\ZooLab\\ZooLab\\ZooLab.csproj",
       "projectName": "ZooLab",
-      "projectPath": "C:\\Doc\\projects\\ZooApp-Blaze2021\\ZooLab\\ZooLab.csproj",
-      "packagesPath": "C:\\Users\\opishnyak_ry\\.nuget\\packages\\",
-      "outputPath": "C:\\Doc\\projects\\ZooApp-Blaze2021\\ZooLab\\obj\\",
+      "projectPath": "D:\\projects\\ZooApp-blaze2021\\ZooLab\\ZooLab\\ZooLab.csproj",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "outputPath": "D:\\projects\\ZooApp-blaze2021\\ZooLab\\ZooLab\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\opishnyak_ry\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -60,7 +60,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
       }
     }
   }
