@@ -310,5 +310,79 @@ namespace ZooLab.Tests
             Assert.Equal(secondZooKeeper, bison.FeedTimes[0].FedByZookeeper);
 
         }
+
+        [Fact]
+        public void ShouldBeAbleToFeedAnimalsIfThereAreNotOnlyZooKeepers()
+        {
+            Zoo zoo = new();
+            zoo.AddEnclosure("", 10000);
+
+            Elephant elephant = new();
+            Bison bison = new();
+
+            elephant.IsHungry = true;
+            bison.IsHungry = true;
+
+            Enclosure enclosureOne = zoo.FindAvailableEnclosure(elephant);
+            Enclosure enclosureTwo = zoo.FindAvailableEnclosure(bison);
+
+            enclosureOne.AddAnimals(elephant);
+            enclosureOne.AddAnimals(bison);
+
+            ZooKeeper zooKeeper = new("first", "first");
+            Veterinarian veterinarian = new("second", "second");
+            Veterinarian secondVeterinarian = new("second1", "second1");
+
+            zooKeeper.AddAnimalExperience(new Elephant());
+            zooKeeper.AddAnimalExperience(new Bison());
+
+            zooKeeper.AvailableFood.Add(new Grass());
+            
+            zoo.Employees.Add(zooKeeper);
+            zoo.Employees.Add(veterinarian);
+            zoo.Employees.Add(secondVeterinarian);
+
+            zoo.FeedAnimals();
+
+            Assert.Equal(zooKeeper, bison.FeedTimes[0].FedByZookeeper);
+
+        }
+
+        [Fact]
+        public void ShouldBeAbleToHealAllAnimalsIfThereAreNotOnlyVeterinarians()
+        {
+            Zoo zoo = new();
+
+            zoo.AddEnclosure("Lions enclosure", 10000);
+            zoo.AddEnclosure("Elephants enclosure", 10000);
+
+            Lion lion = new();
+            Elephant elephant = new();
+
+            ZooKeeper zooKeeper = new("Jein", "Doe");
+            Veterinarian veterinarian = new("John", "Doe");
+            
+
+            veterinarian.AvailableMedicine.Add(new Antibiotic());
+            veterinarian.AvailableMedicine.Add(new AntiDepression());
+            veterinarian.AvailableMedicine.Add(new AntiInflammatory());
+            veterinarian.AddAnimalExperience(lion);
+            veterinarian.AddAnimalExperience(elephant);
+
+            zoo.Employees.Add(zooKeeper);
+            zoo.HireEmployee(veterinarian);
+
+            lion.IsSick = true;
+            elephant.IsSick = true;
+
+            zoo.FindAvailableEnclosure(lion).AddAnimals(lion);
+            zoo.FindAvailableEnclosure(elephant).AddAnimals(elephant);
+
+            zoo.HealAnimals();
+
+            Assert.False(lion.IsSick);
+            Assert.False(elephant.IsSick);
+        }
+
     }
 }

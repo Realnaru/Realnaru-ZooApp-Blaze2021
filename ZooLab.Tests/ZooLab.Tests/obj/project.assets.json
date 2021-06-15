@@ -1659,6 +1659,9 @@
       "ZooLab/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "ZooLab.BusinessLogic": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/ZooLab.dll": {}
         },
@@ -1669,9 +1672,6 @@
       "ZooLab.BusinessLogic/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
-        "dependencies": {
-          "ZooLab": "1.0.0"
-        },
         "compile": {
           "bin/placeholder/ZooLab.BusinessLogic.dll": {}
         },

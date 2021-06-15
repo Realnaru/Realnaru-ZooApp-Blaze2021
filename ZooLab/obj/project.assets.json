@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net5.0": {}
+    "net5.0": {
+      "ZooLab.BusinessLogic/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/ZooLab.BusinessLogic.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ZooLab.BusinessLogic.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "ZooLab.BusinessLogic/1.0.0": {
+      "type": "project",
+      "path": "../ZooLab.BusinessLogic/ZooLab.BusinessLogic.csproj",
+      "msbuildProject": "../ZooLab.BusinessLogic/ZooLab.BusinessLogic.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net5.0": []
+    "net5.0": [
+      "ZooLab.BusinessLogic >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\opishnyak_ry\\.nuget\\packages\\": {}
@@ -33,7 +52,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Doc\\projects\\ZooApp-Blaze2021\\ZooLab.BusinessLogic\\ZooLab.BusinessLogic.csproj": {
+              "projectPath": "C:\\Doc\\projects\\ZooApp-Blaze2021\\ZooLab.BusinessLogic\\ZooLab.BusinessLogic.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

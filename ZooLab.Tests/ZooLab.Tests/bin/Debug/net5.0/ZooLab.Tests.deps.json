@@ -1092,14 +1092,14 @@
       },
       "xunit.runner.visualstudio/2.4.3": {},
       "ZooLab/1.0.0": {
+        "dependencies": {
+          "ZooLab.BusinessLogic": "1.0.0"
+        },
         "runtime": {
           "ZooLab.dll": {}
         }
       },
       "ZooLab.BusinessLogic/1.0.0": {
-        "dependencies": {
-          "ZooLab": "1.0.0"
-        },
         "runtime": {
           "ZooLab.BusinessLogic.dll": {}
         }

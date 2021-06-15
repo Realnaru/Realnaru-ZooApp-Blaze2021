@@ -7,27 +7,14 @@
   "targets": {
     ".NETCoreApp,Version=v5.0": {
       "ZooLab.BusinessLogic/1.0.0": {
-        "dependencies": {
-          "ZooLab": "1.0.0"
-        },
         "runtime": {
           "ZooLab.BusinessLogic.dll": {}
-        }
-      },
-      "ZooLab/1.0.0": {
-        "runtime": {
-          "ZooLab.dll": {}
         }
       }
     }
   },
   "libraries": {
     "ZooLab.BusinessLogic/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "ZooLab/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

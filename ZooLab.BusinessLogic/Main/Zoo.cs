@@ -137,28 +137,44 @@ namespace ZooLab.BusinessLogic
 
         public void HealAnimals()
         {
+            List<Veterinarian> veterinarians = new List<Veterinarian>();
+
             if (Employees.Count != 0)
             {
-                foreach(var employee in Employees)
+                foreach (var employee in Employees)
                 {
                     if (employee.GetType().Name == typeof(Veterinarian).Name)
                     {
-                        foreach (var enclosure in Enclosures)
+                        veterinarians.Add(employee as Veterinarian);
+                    }
+                }
+
+                    if (veterinarians.Count != 0)
+                    {
+                        foreach (var veterinaran in veterinarians)
                         {
-                            foreach (var creature in enclosure.Animals)
+                            foreach (var enclosure in Enclosures)
                             {
-                                (employee as Veterinarian).HealAnimal(creature);
-                                zooConsole?.WriteLine($"{creature.GetType().Name} was fed by {employee.FirstName} {employee.LastName}");
+                                foreach (var creature in enclosure.Animals)
+                                {
+                                    if (veterinaran.HasAnimalExperience(creature))
+                                    {
+                                        if (veterinaran.HealAnimal(creature))
+                                        {
+                                            Console.WriteLine($"{creature.GetType().Name} was fed by {veterinaran.LastName} in {enclosure.Name}");
+                                        }
+                                    }
+                                }
                             }
+                            break;
                         }
-                        break;
+                        
                     } else
                     {
                         zooConsole?.WriteLine($"Zoo has no veterinarian, hire at least one");
                         throw new NoNeededEmployeeException();
                     }
                              
-                }
             } else
             {
                 zooConsole?.WriteLine($"Zoo has no veterinarian, hire at least one");

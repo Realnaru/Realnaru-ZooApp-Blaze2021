@@ -42,7 +42,7 @@ namespace ZooLab.BusinessLogic
         
         public bool FeedAnimal(Animal animal, IConsole zooConsole = null)
         {
-            if (HasAnimalExperience(animal) && (animal.IsHungry || animal.FeedSchedule.Count > 0 && animal.FeedSchedule[0] > Convert.ToInt32(DateTime.Now.Hour) || animal.FeedSchedule[1] > Convert.ToInt32(DateTime.Now.Hour)))
+            if (HasAnimalExperience(animal) && (animal.IsHungry) || (animal.FeedSchedule.Count > 0 && animal.FeedSchedule[0] > Convert.ToInt32(DateTime.Now.Hour) || animal.FeedSchedule[1] > Convert.ToInt32(DateTime.Now.Hour)))
             {
                foreach (var favoriteFood in animal.FavoriteFood)
                 {

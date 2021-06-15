@@ -1,30 +1,11 @@
 {
   "version": 3,
   "targets": {
-    "net5.0": {
-      "ZooLab/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
-        "compile": {
-          "bin/placeholder/ZooLab.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/ZooLab.dll": {}
-        }
-      }
-    }
+    "net5.0": {}
   },
-  "libraries": {
-    "ZooLab/1.0.0": {
-      "type": "project",
-      "path": "../ZooLab/ZooLab.csproj",
-      "msbuildProject": "../ZooLab/ZooLab.csproj"
-    }
-  },
+  "libraries": {},
   "projectFileDependencyGroups": {
-    "net5.0": [
-      "ZooLab >= 1.0.0"
-    ]
+    "net5.0": []
   },
   "packageFolders": {
     "C:\\Users\\opishnyak_ry\\.nuget\\packages\\": {}
@@ -52,11 +33,7 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {
-            "C:\\Doc\\projects\\ZooApp-Blaze2021\\ZooLab\\ZooLab.csproj": {
-              "projectPath": "C:\\Doc\\projects\\ZooApp-Blaze2021\\ZooLab\\ZooLab.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {

@@ -30,3 +30,6 @@ C:\Doc\projects\ZooApp-Blaze2021\ZooLab\obj\Debug\net5.0\ZooLab.dll
 C:\Doc\projects\ZooApp-Blaze2021\ZooLab\obj\Debug\net5.0\ref\ZooLab.dll
 C:\Doc\projects\ZooApp-Blaze2021\ZooLab\obj\Debug\net5.0\ZooLab.pdb
 C:\Doc\projects\ZooApp-Blaze2021\ZooLab\obj\Debug\net5.0\ZooLab.genruntimeconfig.cache
+C:\Doc\projects\ZooApp-Blaze2021\ZooLab\bin\Debug\net5.0\ZooLab.BusinessLogic.dll
+C:\Doc\projects\ZooApp-Blaze2021\ZooLab\bin\Debug\net5.0\ZooLab.BusinessLogic.pdb
+C:\Doc\projects\ZooApp-Blaze2021\ZooLab\obj\Debug\net5.0\ZooLab.csproj.CopyComplete
