@@ -161,7 +161,7 @@ namespace ZooLab.BusinessLogic
                                     {
                                         if (veterinaran.HealAnimal(creature))
                                         {
-                                            Console.WriteLine($"{creature.GetType().Name} was fed by {veterinaran.LastName} in {enclosure.Name}");
+                                            zooConsole.WriteLine($"{creature.GetType().Name} was fed by {veterinaran.LastName} in {enclosure.Name}");
                                         }
                                     }
                                 }
