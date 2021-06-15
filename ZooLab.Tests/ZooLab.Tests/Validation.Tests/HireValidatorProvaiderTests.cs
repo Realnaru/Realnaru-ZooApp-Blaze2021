@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 using ZooLab.BusinessLogic;
+using ZooLab.Tests.Validation.Tests;
 
 namespace ZooLab.Tests
 {

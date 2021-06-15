@@ -11,6 +11,7 @@ namespace ZooLab.Tests
 {
     public class ProgramTests
     {
+     
         [Fact]
         public void ShouldReturnMessages()
         {
