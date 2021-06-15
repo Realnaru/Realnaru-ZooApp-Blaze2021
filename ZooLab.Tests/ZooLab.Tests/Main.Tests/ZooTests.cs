@@ -310,7 +310,6 @@ namespace ZooLab.Tests
             Assert.Equal(secondZooKeeper, bison.FeedTimes[0].FedByZookeeper);
 
         }
-<<<<<<< HEAD
 
         [Fact]
         public void ShouldBeAbleToFeedAnimalsIfThereAreNotOnlyZooKeepers()
@@ -385,7 +384,5 @@ namespace ZooLab.Tests
             Assert.False(elephant.IsSick);
         }
 
-=======
->>>>>>> 723fdfbf5ef7a403eb33eb9b020bc4979ea3cf1b
     }
 }
