@@ -208,7 +208,7 @@ namespace ZooLab.Tests
         [Fact]
         public void ShouldBeAbleToHealAllAnimals()
         {
-            Zoo zoo = new();
+            Zoo zoo = new(new MockConsole());
 
             zoo.AddEnclosure("Lions enclosure", 10000);
             zoo.AddEnclosure("Elephants enclosure", 10000);
@@ -351,7 +351,7 @@ namespace ZooLab.Tests
         [Fact]
         public void ShouldBeAbleToHealAllAnimalsIfThereAreNotOnlyVeterinarians()
         {
-            Zoo zoo = new();
+            Zoo zoo = new(new MockConsole());
 
             zoo.AddEnclosure("Lions enclosure", 10000);
             zoo.AddEnclosure("Elephants enclosure", 10000);
