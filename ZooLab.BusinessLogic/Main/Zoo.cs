@@ -75,7 +75,7 @@ namespace ZooLab.BusinessLogic
 
         public void FeedAnimals()
         {
-            List < ZooKeeper > zooKepers = new List<ZooKeeper>();
+            Queue<ZooKeeper> zooKeepers = new Queue<ZooKeeper>();
 
             if (Employees.Count != 0)
             {
@@ -83,40 +83,22 @@ namespace ZooLab.BusinessLogic
                 {
                     if (employee.GetType().Name == typeof(ZooKeeper).Name)
                     {
-                        zooKepers.Add(employee as ZooKeeper);
+                        zooKeepers.Enqueue(employee as ZooKeeper);
                     }
                 }
 
-                if (zooKepers.Count != 0)
+                if (zooKeepers.Count != 0)
                 {
-                    if (zooKepers.Count == 1)
+                    foreach (var enclosure in Enclosures)
                     {
-                        foreach (var enclosure in Enclosures)
+                        foreach (var creature in enclosure.Animals)
                         {
-                            foreach(var creature in enclosure.Animals)
+                            var zooKeeper = zooKeepers.Dequeue();
+                            if (zooKeeper.FeedAnimal(creature))
                             {
-                                if (zooKepers[0].FeedAnimal(creature))
-                                {
-                                    zooConsole?.WriteLine($"{creature.GetType().Name} was fed by {zooKepers[0].FirstName} {zooKepers[0].LastName}");
-                                }
-                            } 
-                        }
-                    } else
-                    {
-                        int count = 0;
-                        foreach (var enclosure in Enclosures)
-                        {
-                            foreach(var creature in enclosure.Animals)
-                            {
-                                count++;
-                                if (count <= this.StartingId / 2)
-                                {
-                                    zooKepers[0].FeedAnimal(creature);
-                                } else
-                                {
-                                    zooKepers[1].FeedAnimal(creature);
-                                }
+                                zooConsole?.WriteLine($"{creature.GetType().Name} was fed by {zooKeeper.FirstName} {zooKeeper.LastName} in {enclosure.Name}");
                             }
+                            zooKeepers.Enqueue(zooKeeper);
                         }
                     }
 
@@ -161,7 +143,7 @@ namespace ZooLab.BusinessLogic
                                     {
                                         if (veterinaran.HealAnimal(creature))
                                         {
-                                            zooConsole.WriteLine($"{creature.GetType().Name} was fed by {veterinaran.LastName} in {enclosure.Name}");
+                                            zooConsole?.WriteLine($"{creature.GetType().Name} was fed by {veterinaran.FirstName} {veterinaran.LastName} in {enclosure.Name}");
                                         }
                                     }
                                 }

@@ -288,8 +288,8 @@ namespace ZooLab.Tests
             enclosureOne.AddAnimals(elephant);
             enclosureOne.AddAnimals(bison);
 
-            ZooKeeper firstZooKeeper = new("", "");
-            ZooKeeper secondZooKeeper = new("first", "last");
+            ZooKeeper firstZooKeeper = new("first", "zookeeper");
+            ZooKeeper secondZooKeeper = new("second", "zookeeper");
 
             firstZooKeeper.AddAnimalExperience(new Elephant());
             firstZooKeeper.AddAnimalExperience(new Bison());
@@ -306,7 +306,7 @@ namespace ZooLab.Tests
 
             zoo.FeedAnimals();
 
-            //Assert.Equal(firstZooKeeper, elephant.FeedTimes[0].FedByZookeeper);
+            Assert.Equal(firstZooKeeper, elephant.FeedTimes[0].FedByZookeeper);
             Assert.Equal(secondZooKeeper, bison.FeedTimes[0].FedByZookeeper);
 
         }
